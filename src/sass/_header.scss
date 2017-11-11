@@ -1,0 +1,247 @@
+// 头部样式
+.head_1{
+    background:#E5E5E5;
+    height:30px;
+    .head_1_1{
+        width:1200px;
+        margin:0 auto;
+        >span{
+            font-size:12px;
+            color:#666;
+            line-height:30px;
+            &:hover a{
+                color:red;
+            }
+        }
+        ul{
+            float:right;
+            li{
+                &.head_1_1_li1{
+                    position:relative;
+                }
+                float:left;
+                &:hover{
+                    a{
+                        color:red;
+                    }
+                }
+                >div{
+                    display:none;
+                    background-color: white;
+                    z-index: 1;
+                    width:122px;
+                    padding:10px 14px;
+                    position:absolute;
+                    right:0;
+                    top:40px;
+                    text-align:center;
+                    border:1px solid #ccc;
+                    div:first-child{
+                        border-bottom:1px solid #ccc;
+                    }
+                    img{
+                        width:121px;
+                        display:block;
+                    }
+                    &::after,&::before{
+                       content:"";
+                       border:10px solid transparent;
+                       border-bottom-color:#ccc;
+                       position:absolute;
+                       right:30px;
+                       top:-20px;
+                    }
+                    &::after{
+                       top:-18px;
+                       border-bottom-color:white;
+                    } 
+                }
+                a{
+                    font-size:12px;
+                    color:#666;
+                    line-height:30px;
+                    margin-right:18px;
+                    span{
+                        color:red;
+                    }
+                    i{
+                        margin-right:5px;
+                        font-size:14px;
+                    }
+                }
+                &.head_li{
+                    a{
+                        padding-left:18px;
+                        border-left:1px solid #ccc;
+                    }
+                }
+
+            }
+        }
+    }
+}
+.head_logo{
+    height:131px;
+    padding-top: 32px;
+    >a{
+        float:left;
+        margin-top:10px;
+    }
+    .head_search{
+        float:left;
+        margin-left:110px;
+        width:500px;
+        margin-right:156px;
+        position:relative;
+        input{
+            height:20px;
+            line-height:20px;
+            font-size:15px;
+            border:2px solid #dc0f50;
+            width:369px;
+            padding:10px 112px 10px 15px;
+            outline: 0;
+        }
+        button{
+            width:98px;
+            background:#dc0f50;
+            color:white;
+            position:absolute;
+            right:0;
+            top:0;
+            height:44px;
+            border:0;
+            font-size:16px;
+            outline: 0;
+            &:hover{
+                opacity: 0.7;
+                cursor:pointer;
+            }
+        }
+        ul{
+            li{
+                float:left;
+                margin-left:10px;
+                height:36px;
+                line-height:36px;
+                a{
+                    font-size: 14px;
+                    margin-right:5px;
+                    &:hover{
+                        color:red;
+                    }
+                }
+            }
+        }
+    }
+    .head_car{
+        float:left;
+        border:1px solid #ccc;
+        width:137px;
+        height:44px;
+        line-height:44px;
+        font-size:14px;
+        position:relative;
+        cursor:pointer;
+        i{
+            font-size:35px;
+            color:red;
+            vertical-align: middle;
+            margin:0 10px 0 10px;
+        }
+        span{
+            display:inline-block;
+            width:20px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            border:1px solid #ccc;
+            border-radius:50%;
+            background-color:red;
+            color:white;
+            position:absolute;
+            top:-10px;
+            right:-10px;
+            font-size:12px;
+        }
+        div{
+            display:none;
+            position:absolute;
+            right:0;
+            top:53px;
+            width:308px;
+            height:58px;
+            line-height:58px;
+            border:1px solid #ccc;
+            
+            &::after,&::before{
+                content:"";
+                border:10px solid transparent;
+                border-bottom-color:#ccc;
+                position:absolute;
+                right:30px;
+                top:-20px;
+            }
+            &::after{
+                top:-18px;
+                border-bottom-color:white;
+            }
+            img{
+                vertical-align: top;
+                margin-top:15px;
+                margin-left:15px;
+                margin-right:10px;
+            }
+        }
+    }
+}
+.head_2{
+    height:40px;
+    position:relative;
+    >span{
+        float:left;
+        // display:inline-block;
+        width:193px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        padding:0 20px;
+        background:#333;
+        color:white;
+        margin-right: 30px;
+        cursor:pointer;
+    }
+    .head_2_ul_1{
+        float:left;
+        li{
+            float:left;
+            padding:0 16px 0 24px;
+            line-height:40px;
+            a{
+                font-size:18px;
+                &:hover{
+                    color:red;
+                }
+            }
+        }
+    }
+    .head_2_ul{
+        position:absolute;
+        left:0;
+        top:40px;
+        border:1px solid #ccc;
+        li{
+            width:191px;
+            height:40px;
+            line-height:40px;
+            padding:0 20px;
+            text-align:center;
+            font-size:14px;
+            cursor:pointer;
+            &:hover{
+                background:#dc0f50;
+                color:white;
+            }
+        }
+    }
+}

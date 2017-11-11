@@ -1,3 +1,6 @@
+// 公用样式
 .clearfix::after{content:"";display:block;height:0;clear:both;overflow:hidden;visibility:hidden;zoom:1;}
 .fl {float:left;}
 .fr {float:right;}
+// 版心容器
+.container{width:1200px;margin:0px auto;}

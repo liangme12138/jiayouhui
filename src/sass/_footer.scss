@@ -1,0 +1,66 @@
+// 底部样式
+.foot_ul{
+    width:1200px;
+    margin:0 auto;
+    height:54px;
+    margin-bottom:45px;
+    margin-top:20px;
+    li{
+        float:left;
+        height:54px;
+        padding:0 25px 0 82px;
+        background:url("../img/warrant_icon.png") no-repeat 15px 0;
+        h4{font-size:16px;padding-top:5px;}
+        p{font-size:12px;color:#999;}
+        &:nth-child(2){
+            background-position:15px -55px;
+        }
+        &:nth-child(3){
+            background-position:15px -110px;
+        }
+        &:nth-child(4){
+            background-position:15px -165px;
+        }
+        &:nth-child(5){
+            background-position:15px -220px;
+        }
+    }
+}
+.foot_div{
+    width:1200px;
+    height:151px;
+    margin:0 auto;
+    margin-bottom:25px;
+    div{
+        float:right;
+        width:260px;
+        height:151px;
+        img{
+            width:79px;
+            margin-right:25px;
+        }
+        h4{
+            font-size:20px;
+            i{
+                font-size:30px;
+                margin-right:10px;
+                color:#999;
+            }
+        }
+        p{font-size:12px;color:#999;margin-left:40px;}
+    }
+}
+footer{
+    background:#333;
+    height:26px;
+    padding:10px 0;
+    p{
+        width:1200px;
+        margin:0 auto;
+        text-align:center;
+        color:#999;
+        font-size:12px;
+        height:26px;
+        line-height:26px;
+    }
+}

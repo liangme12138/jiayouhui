@@ -1,0 +1,408 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2, h3, h4, h5, p, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.container {
+  width: 1200px;
+  margin: 0px auto;
+}
+
+.head_1 {
+  background: #E5E5E5;
+  height: 30px;
+}
+
+.head_1 .head_1_1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.head_1 .head_1_1 > span {
+  font-size: 12px;
+  color: #666;
+  line-height: 30px;
+}
+
+.head_1 .head_1_1 > span:hover a {
+  color: red;
+}
+
+.head_1 .head_1_1 ul {
+  float: right;
+}
+
+.head_1 .head_1_1 ul li {
+  float: left;
+}
+
+.head_1 .head_1_1 ul li.head_1_1_li1 {
+  position: relative;
+}
+
+.head_1 .head_1_1 ul li:hover a {
+  color: red;
+}
+
+.head_1 .head_1_1 ul li > div {
+  display: none;
+  background-color: white;
+  z-index: 1;
+  width: 122px;
+  padding: 10px 14px;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.head_1 .head_1_1 ul li > div div:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.head_1 .head_1_1 ul li > div img {
+  width: 121px;
+  display: block;
+}
+
+.head_1 .head_1_1 ul li > div::after, .head_1 .head_1_1 ul li > div::before {
+  content: "";
+  border: 10px solid transparent;
+  border-bottom-color: #ccc;
+  position: absolute;
+  right: 30px;
+  top: -20px;
+}
+
+.head_1 .head_1_1 ul li > div::after {
+  top: -18px;
+  border-bottom-color: white;
+}
+
+.head_1 .head_1_1 ul li a {
+  font-size: 12px;
+  color: #666;
+  line-height: 30px;
+  margin-right: 18px;
+}
+
+.head_1 .head_1_1 ul li a span {
+  color: red;
+}
+
+.head_1 .head_1_1 ul li a i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.head_1 .head_1_1 ul li.head_li a {
+  padding-left: 18px;
+  border-left: 1px solid #ccc;
+}
+
+.head_logo {
+  height: 131px;
+  padding-top: 32px;
+}
+
+.head_logo > a {
+  float: left;
+  margin-top: 10px;
+}
+
+.head_logo .head_search {
+  float: left;
+  margin-left: 110px;
+  width: 500px;
+  margin-right: 156px;
+  position: relative;
+}
+
+.head_logo .head_search input {
+  height: 20px;
+  line-height: 20px;
+  font-size: 15px;
+  border: 2px solid #dc0f50;
+  width: 369px;
+  padding: 10px 112px 10px 15px;
+  outline: 0;
+}
+
+.head_logo .head_search button {
+  width: 98px;
+  background: #dc0f50;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 44px;
+  border: 0;
+  font-size: 16px;
+  outline: 0;
+}
+
+.head_logo .head_search button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.head_logo .head_search ul li {
+  float: left;
+  margin-left: 10px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.head_logo .head_search ul li a {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.head_logo .head_search ul li a:hover {
+  color: red;
+}
+
+.head_logo .head_car {
+  float: left;
+  border: 1px solid #ccc;
+  width: 137px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.head_logo .head_car i {
+  font-size: 35px;
+  color: red;
+  vertical-align: middle;
+  margin: 0 10px 0 10px;
+}
+
+.head_logo .head_car span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 12px;
+}
+
+.head_logo .head_car div {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 53px;
+  width: 308px;
+  height: 58px;
+  line-height: 58px;
+  border: 1px solid #ccc;
+}
+
+.head_logo .head_car div::after, .head_logo .head_car div::before {
+  content: "";
+  border: 10px solid transparent;
+  border-bottom-color: #ccc;
+  position: absolute;
+  right: 30px;
+  top: -20px;
+}
+
+.head_logo .head_car div::after {
+  top: -18px;
+  border-bottom-color: white;
+}
+
+.head_logo .head_car div img {
+  vertical-align: top;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.head_2 {
+  height: 40px;
+  position: relative;
+}
+
+.head_2 > span {
+  float: left;
+  width: 193px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 20px;
+  background: #333;
+  color: white;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.head_2 .head_2_ul_1 {
+  float: left;
+}
+
+.head_2 .head_2_ul_1 li {
+  float: left;
+  padding: 0 16px 0 24px;
+  line-height: 40px;
+}
+
+.head_2 .head_2_ul_1 li a {
+  font-size: 18px;
+}
+
+.head_2 .head_2_ul_1 li a:hover {
+  color: red;
+}
+
+.head_2 .head_2_ul {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  border: 1px solid #ccc;
+}
+
+.head_2 .head_2_ul li {
+  width: 191px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.head_2 .head_2_ul li:hover {
+  background: #dc0f50;
+  color: white;
+}
+
+.foot_ul {
+  width: 1200px;
+  margin: 0 auto;
+  height: 54px;
+  margin-bottom: 45px;
+  margin-top: 20px;
+}
+
+.foot_ul li {
+  float: left;
+  height: 54px;
+  padding: 0 25px 0 82px;
+  background: url("../img/warrant_icon.png") no-repeat 15px 0;
+}
+
+.foot_ul li h4 {
+  font-size: 16px;
+  padding-top: 5px;
+}
+
+.foot_ul li p {
+  font-size: 12px;
+  color: #999;
+}
+
+.foot_ul li:nth-child(2) {
+  background-position: 15px -55px;
+}
+
+.foot_ul li:nth-child(3) {
+  background-position: 15px -110px;
+}
+
+.foot_ul li:nth-child(4) {
+  background-position: 15px -165px;
+}
+
+.foot_ul li:nth-child(5) {
+  background-position: 15px -220px;
+}
+
+.foot_div {
+  width: 1200px;
+  height: 151px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.foot_div div {
+  float: right;
+  width: 260px;
+  height: 151px;
+}
+
+.foot_div div img {
+  width: 79px;
+  margin-right: 25px;
+}
+
+.foot_div div h4 {
+  font-size: 20px;
+}
+
+.foot_div div h4 i {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #999;
+}
+
+.foot_div div p {
+  font-size: 12px;
+  color: #999;
+  margin-left: 40px;
+}
+
+footer {
+  background: #333;
+  height: 26px;
+  padding: 10px 0;
+}
+
+footer p {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  height: 26px;
+  line-height: 26px;
+}
