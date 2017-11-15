@@ -1,0 +1,23 @@
+.list_d{
+    >h3{
+        padding-left:15px;
+        height:40px;
+        line-height:40px;
+        font-size:12px;
+        color:#666;
+    }
+    .list_d_1{
+        width:1140px;
+        height:512px;
+        padding:29px;
+        border:1px solid #ccc;
+        .list_d_1_img{
+            width:545px;
+            height:512px;
+        }
+        .list_d_1_cont{
+            width:550px;
+            height:404px;
+        }
+    }
+}

@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+    <script src="../js/require.js" data-main="../js/logIn&signIn" type="text/javascript"></script>
 </head>
 <body>
-    
+    <div id="box">
+        <div class="head">
+            
+        </div>
+        <span></span>
+        <main class="container signIn_m clearfix">
+            <div class="signIn fl">
+                <label for="phone"><span>*</span>手机号：<input type="text" placeholder="请输入11位有效手机号码" id="phone"/></label>
+                <br />
+                <label for="tupian"><span>*</span>图片验证码：<input type="text" placeholder="请输入图片验证码" id="tupian"/>
+                <div id="v_container"></div></label>
+                <br />
+                <label for="password"><span>*</span>设置密码：<input type="password" placeholder="请输入6-16个字符，不能添加空格哦" id="password"/></label>
+                <br />
+                <label for="password_1"><span>*</span>确认密码：<input type="password" placeholder="请输入确认密码" id="password_1"/></label>
+                <br />
+                <p><input type="checkbox" id="check"/><label for="check">我已阅读并同意《会员注册协议》和《隐私保护政策》</label></p><br />
+                <button>注 册</button>
+                <a href="logIn.html">我已注册，立即登录</a>
+            </div>
+            <img src="../img/signin.jpg"/>
+        </main>
+        <div class="foot">
+            
+        </div>
+    </div>
 </body>
 </html>

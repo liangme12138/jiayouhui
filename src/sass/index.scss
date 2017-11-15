@@ -8,3 +8,177 @@
 @import "logIn&signIn";
 @import "footer";
 
+#box{
+    nav{
+        margin-left:240px;
+        .carousel{
+            position:relative;
+            width:714px;
+            height:382px;
+            margin:0 auto;
+            // border:2px solid #f00;
+            overflow: hidden;
+            ul{
+               position:absolute;
+               top:0;left:0; 
+            }
+            img{
+               display: block; 
+            }
+            .next,.prev{
+                position:absolute;
+                left:0;
+                top:50%;
+                transform: translate(0,-50%);
+                padding:10px 5px;
+                width:30px;
+                height:50px;
+                line-height:50px;
+                background-color: rgba(0,0,0,.3);
+                text-align:center;
+                color:#fff;
+                cursor:pointer;
+            }
+            .next{
+                left:auto;right:0;
+            }
+            .page{
+                position: absolute;
+                right:15px;
+                bottom:15px;
+                span{
+                    display:inline-block;
+                    margin:0 5px;
+                    width:30px;
+                    height:30px;
+                    line-height:30px;
+                    text-align:center;
+                    background-color:#efefef;
+                    border-radius:50%;
+                    cursor:pointer;
+                    &.active{
+                        background-color:#f60;
+                        color:#fff;
+                    }
+                }
+
+            }
+        }
+        >img{
+            margin-top:5px;
+            display:inline-block;
+        }
+    }
+    >span{
+        display:block;
+        z-index: 100;
+        width:100%;
+        border:1px solid red;
+    }
+    >div{
+        .nav1_1{
+            width:232px;
+            height:175px;
+            border:1px solid #ccc; 
+            margin-left:8px;
+            margin-top:10px;
+            img{
+                margin-left:95px;
+                margin-top:20px;
+            }
+            >p{
+                text-align:center;
+            }
+            button{
+                border:0;
+                padding:0;
+                width:200px;
+                margin-top:20px;
+                margin-left:16px;
+                a{
+                    display:block;
+                    width:200px;
+                    height:40px;
+                    line-height:40px;
+                    background:#dc0f50;
+                    color:white;
+                    font-size:16px;
+                }
+            }
+            >a{
+                float:right;
+                margin-right:16px;
+                margin-top:5px;
+                font-size: 12px;
+            }
+        }
+        .nav1_2{
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            width:232px;
+            border:1px solid #ccc; 
+            margin-left:8px;
+            margin-bottom:14px;
+            h3{
+                color:#ccc;
+                text-align:center;
+                font-size: 24px;
+                height:66px;
+                line-height:66px;
+                i{
+                    font-size:30px;
+                    margin-right: 10px;
+                }
+            }
+            ul{
+                width:210px;
+                height:67px;
+                margin:0 auto;
+                
+                li{
+                    float:left;
+                    width:52.5px;
+                    height:55px;
+                    color:#333;
+                    font-size:12px;
+                    text-align: center;
+
+                    &:hover{
+                        color:red;
+                        cursor:pointer;
+                    }
+                    i{
+                        display:block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .nav2{
+            width:232px;
+            border-top:2px solid red;
+            margin-left:8px;
+            text-align:center;
+            P{
+                margin:10px 0 20px 0;
+                color:red;
+            }
+            img{
+                width:113px;
+                display:block;
+                margin:0 auto;
+            }
+            button{
+                width:113px;
+                height:28px;
+                background-color: #dc0f50;
+                font-size:12px;
+                margin-top:20px;
+                outline:none ;
+                border:0;
+                color:white;
+            }
+        }
+    }
+}

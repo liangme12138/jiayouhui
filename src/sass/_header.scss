@@ -170,10 +170,10 @@
             right:0;
             top:53px;
             width:308px;
-            height:58px;
+            min-height:58px;
             line-height:58px;
             border:1px solid #ccc;
-            
+            background:white;
             &::after,&::before{
                 content:"";
                 border:10px solid transparent;
@@ -198,18 +198,46 @@
 .head_2{
     height:40px;
     position:relative;
-    >span{
-        float:left;
-        // display:inline-block;
-        width:193px;
-        height:40px;
-        line-height:40px;
-        text-align:center;
-        padding:0 20px;
-        background:#333;
-        color:white;
-        margin-right: 30px;
-        cursor:pointer;
+    div{
+        >span{
+            i{
+                margin-left:60px;
+            }
+            float:left;
+            // display:inline-block;
+            width:193px;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            padding:0 20px;
+            background:#333;
+            color:white;
+            margin-right: 30px;
+            cursor:pointer;
+        }
+        .head_2_ul{
+            position:absolute;
+            left:0;
+            top:40px;
+            border:1px solid #ccc;
+            border-top:2px solid #dc0f50;
+            background:white;
+            height:561px;
+            z-index:100;
+            li{
+                width:191px;
+                height:40px;
+                line-height:40px;
+                padding:0 20px;
+                text-align:center;
+                font-size:14px;
+                cursor:pointer;
+                &:hover{
+                    background:#dc0f50;
+                    color:white;
+                }
+            }
+        }
     }
     .head_2_ul_1{
         float:left;
@@ -222,25 +250,6 @@
                 &:hover{
                     color:red;
                 }
-            }
-        }
-    }
-    .head_2_ul{
-        position:absolute;
-        left:0;
-        top:40px;
-        border:1px solid #ccc;
-        li{
-            width:191px;
-            height:40px;
-            line-height:40px;
-            padding:0 20px;
-            text-align:center;
-            font-size:14px;
-            cursor:pointer;
-            &:hover{
-                background:#dc0f50;
-                color:white;
             }
         }
     }

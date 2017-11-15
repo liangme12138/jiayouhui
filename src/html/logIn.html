@@ -3,8 +3,73 @@
 <head>
     <meta charset="UTF-8" />
     <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+    <script src="../js/require.js" data-main="../js/logIn&signIn" type="text/javascript"></script>
 </head>
 <body>
-    
+    <div id="box">
+        <div class="head">
+            
+        </div>
+        <span></span>
+        <main class="container logIn_l">
+            <img src="../img/login.jpg"  />
+            <div class="logIn_1">
+                <div class="logIn_1_1 clearfix">
+                    <div class="logIn_active"><span>用户登录</span></div>
+                    <div><span>快捷登录</span></div>
+                </div>
+                <div class="logIn_1_2">
+                    <ul>
+                        <li>
+                            <i class="iconfont icon-yonghu"></i><input type="text" placeholder="请输入11位有效手机号码"/>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-mima"></i><input type="text" placeholder="请输入密码"/>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check"/><label for="check">下次自动登录</label>  <a href="#">重置密码</a>
+                            <a href="signIn.html" class="logIn_1_2a">新用户注册</a>
+                        </li>
+                        <li>
+                            <button>登 录</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logIn_1_3"   style="display:none;">
+                    <i class="iconfont icon-fcstubiao25"></i>
+                    <p>电视激活用户由此登录</p>
+                    <p>请确保你的手机畅通，用于接收验证码短信</p>
+                    <ul>
+                        <li>
+                            <i class="iconfont icon-yonghu"></i>
+                            <input type="text" placeholder="请输入11位有效手机号码"/>
+                            <span>获取验证码</span>
+                        </li>
+                        <li>
+                            <i class="iconfont icon-mima"></i>
+                            <input type="text" placeholder="请输入图片验证码"/>
+                            <div id="v_container"></div>
+                        </li>
+                        <li>
+                             <i class="iconfont icon-mima"></i>
+                            <input type="text" placeholder="请输入验证码"/>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check"/><label for="check">下次自动登录</label>  <a href="#">重置密码</a>
+                            <a href="signIn.html" class="logIn_1_2a">新用户注册</a>
+                        </li>
+                        <li>
+                            <button>登 录</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <div class="foot">
+            
+        </div>
+    </div>
 </body>
 </html>

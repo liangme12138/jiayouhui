@@ -4,7 +4,7 @@ ul, li {
   list-style: none;
 }
 
-h2, h3, h4, h5, p, body {
+h2, h3, h4, h5, hr, p, body {
   margin: 0;
   padding: 0;
 }
@@ -232,9 +232,10 @@ a {
   right: 0;
   top: 53px;
   width: 308px;
-  height: 58px;
+  min-height: 58px;
   line-height: 58px;
   border: 1px solid #ccc;
+  background: white;
 }
 
 .head_logo .head_car div::after, .head_logo .head_car div::before {
@@ -263,7 +264,7 @@ a {
   position: relative;
 }
 
-.head_2 > span {
+.head_2 div > span {
   float: left;
   width: 193px;
   height: 40px;
@@ -274,6 +275,36 @@ a {
   color: white;
   margin-right: 30px;
   cursor: pointer;
+}
+
+.head_2 div > span i {
+  margin-left: 60px;
+}
+
+.head_2 div .head_2_ul {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  border: 1px solid #ccc;
+  border-top: 2px solid #dc0f50;
+  background: white;
+  height: 561px;
+  z-index: 100;
+}
+
+.head_2 div .head_2_ul li {
+  width: 191px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.head_2 div .head_2_ul li:hover {
+  background: #dc0f50;
+  color: white;
 }
 
 .head_2 .head_2_ul_1 {
@@ -294,26 +325,468 @@ a {
   color: red;
 }
 
-.head_2 .head_2_ul {
-  position: absolute;
-  left: 0;
-  top: 40px;
-  border: 1px solid #ccc;
+.car_m .car_div {
+  height: 150px;
+  padding-top: 300px;
+  background: url("../img/gwc_kong.png") no-repeat center 111px;
 }
 
-.head_2 .head_2_ul li {
-  width: 191px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 20px;
+.car_m .car_div p {
   text-align: center;
+  margin-top: 20px;
+}
+
+.car_m .car_div p a {
+  color: blue;
+  margin: 0 8px;
+}
+
+.list_m {
+  margin: 15px auto;
+}
+
+.list_m .list_m_1 {
+  width: 957px;
+}
+
+.list_m .list_m_1 > h3 {
   font-size: 14px;
+  color: #666;
+  margin-bottom: 7px;
+}
+
+.list_m .list_m_1 .list_m_1_div {
+  border: 1px solid #ccc;
+  margin-bottom: 19px;
+}
+
+.list_m .list_m_1 .list_m_1_div dl {
+  position: relative;
+  margin: 0;
+}
+
+.list_m .list_m_1 .list_m_1_div dl:first-child {
+  border-bottom: 1px dashed #666;
+}
+
+.list_m .list_m_1 .list_m_1_div dl dt {
+  float: left;
+  width: 90px;
+  height: 100%;
+  line-height: 58px;
+  background: #ccc;
+  text-align: center;
+}
+
+.list_m .list_m_1 .list_m_1_div dl dd {
+  margin-left: 90px;
+  width: 850px;
+  height: 58px;
+  overflow: hidden;
+}
+
+.list_m .list_m_1 .list_m_1_div dl dd a {
+  margin: 18px 35px 18px 0;
+  float: left;
+  font-size: 12px;
+  line-height: 22px;
+  color: #666;
+  padding: 0 6px;
+}
+
+.list_m .list_m_1 .list_m_1_div dl span {
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+  font-size: 12px;
   cursor: pointer;
 }
 
-.head_2 .head_2_ul li:hover {
+.list_m .list_m_1 .list_m_1_ul {
+  width: 957px;
+  height: 45px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  background: #f1f1f1;
+}
+
+.list_m .list_m_1 .list_m_1_ul li {
+  float: left;
+  line-height: 45px;
+  width: 88px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.list_m .list_m_1 .list_m_1_ul li i {
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.list_m .list_m_1 .list_m_1_ul li:last-child {
+  width: 245px;
+  background: white;
+}
+
+.list_m .list_m_1 .list_m_1_ul li.list_m_1_active {
+  background: white;
+}
+
+.list_m .list_m_1 .list_m_1_ul li input {
+  width: 32px;
+  height: 22px;
+  padding: 0 8px;
+  outline: 0;
+}
+
+.list_m .list_m_1 .list_m_1_ul li button {
+  background: #dc0f50;
+  width: 50px;
+  height: 23px;
+  outline: 0;
+  border: 0;
+  margin: 10px 0 0 15px;
+  cursor: pointer;
+}
+
+.list_m .list_m_2 {
+  width: 233px;
+}
+
+.list_m .list_m_3 {
+  width: 1200px;
+  height: 362px;
+}
+
+.list_m .list_m_3 div:first-child {
+  height: 32px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+.list_m .list_m_3 div h3 {
+  float: left;
+  font-size: 24px;
+  background: #fff;
+  line-height: 34px;
+}
+
+.list_m .list_m_3 div:last-child {
+  height: 300px;
+}
+
+.list_d > h3 {
+  padding-left: 15px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #666;
+}
+
+.list_d .list_d_1 {
+  width: 1140px;
+  height: 512px;
+  padding: 29px;
+  border: 1px solid #ccc;
+}
+
+.list_d .list_d_1 .list_d_1_img {
+  width: 545px;
+  height: 512px;
+}
+
+.list_d .list_d_1 .list_d_1_cont {
+  width: 550px;
+  height: 404px;
+}
+
+.signIn_m {
+  width: 1040px;
+  height: 561px;
+}
+
+.signIn_m .signIn {
+  width: 411px;
+  height: 401px;
+  text-align: right;
+  padding-top: 80px;
+  padding-right: 179px;
+}
+
+.signIn_m .signIn span {
+  color: red;
+}
+
+.signIn_m .signIn label {
+  font-size: 14px;
+  position: relative;
+}
+
+.signIn_m .signIn label span:nth-of-type(2) {
+  display: inline-block;
+  width: 200px;
+  height: 20px;
+  margin-left: 15px;
+  position: absolute;
+  left: 370px;
+  top: 0;
+  font-size: 12px;
+  text-align: left;
+}
+
+.signIn_m .signIn label span:nth-of-type(2) img {
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+.signIn_m .signIn label > input {
+  width: 263px;
+  height: 20px;
+  padding: 9px 20px;
+  margin-bottom: 20px;
+  outline: 0;
+}
+
+.signIn_m .signIn label > input#tupian {
+  width: 180px;
+}
+
+.signIn_m .signIn p {
+  font-size: 14px;
+}
+
+.signIn_m .signIn p input {
+  outline: 0;
+}
+
+.signIn_m .signIn button {
+  float: right;
+  width: 305px;
+  height: 40px;
+  color: white;
+  background: #dc0f50;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.signIn_m .signIn a {
+  font-size: 16px;
+  color: #666;
+  float: right;
+  margin-top: 5px;
+  border-bottom: 1px solid #666;
+}
+
+.signIn_m .signIn a:hover {
+  color: red;
+}
+
+.signIn_m .signIn div {
+  float: right;
+  width: 83px;
+  height: 40px;
+}
+
+.signIn_m img {
+  float: left;
+  margin-top: 80px;
+}
+
+.logIn_l {
+  width: 1060px;
+  padding-top: 60px;
+}
+
+.logIn_l img {
+  margin-top: 40px;
+  margin-bottom: 75px;
+}
+
+.logIn_l .logIn_1 {
+  width: 448px;
+  height: 376px;
+  float: right;
+}
+
+.logIn_l .logIn_1 .logIn_1_1 div {
+  float: left;
+  width: 224px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.logIn_l .logIn_1 .logIn_1_1 div span {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+}
+
+.logIn_l .logIn_1 .logIn_1_1 div.logIn_active span {
+  border-bottom: 2px solid red;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 {
+  width: 376px;
+  height: 290px;
+  padding: 45px 0 0 70px;
+  border: 1px solid #ccc;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li {
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li input {
+  width: 243px;
+  height: 28px;
+  line-height: 28px;
+  padding: 5px  0 5px 60px;
+  outline: 0;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li input#check {
+  padding: 0;
+  width: 13px;
+  height: 13px;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li a {
+  font-size: 14px;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li a:hover {
+  color: red;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li .logIn_1_2a {
+  float: right;
+  padding-right: 70px;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li button {
+  width: 306px;
+  height: 40px;
+  border: 0;
+  outline: 0;
   background: #dc0f50;
   color: white;
+}
+
+.logIn_l .logIn_1 .logIn_1_2 ul li i {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: #ccc;
+  font-size: 22px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 {
+  width: 376px;
+  height: 335px;
+  padding: 0 0 0 70px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 > i {
+  position: absolute;
+  left: 80px;
+  top: 10px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 p:nth-of-type(1) {
+  padding-left: 32px;
+  color: red;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li {
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li input {
+  width: 263px;
+  height: 28px;
+  line-height: 28px;
+  padding: 5px  0 5px 40px;
+  outline: 0;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li input#check {
+  padding: 0;
+  width: 13px;
+  height: 13px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li span {
+  display: inline-block;
+  width: 78px;
+  height: 38px;
+  line-height: 38px;
+  padding: 1px 6px;
+  background: #dc0f50;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  right: 70px;
+  top: 1px;
+  cursor: pointer;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li a {
+  font-size: 14px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li a:hover {
+  color: red;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li .logIn_1_2a {
+  float: right;
+  padding-right: 70px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li button {
+  width: 306px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  background: #dc0f50;
+  color: white;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li i {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: #ccc;
+  font-size: 22px;
+}
+
+.logIn_l .logIn_1 .logIn_1_3 ul li #v_container {
+  margin: 0;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  right: 70px;
+  top: 5px;
+  cursor: pointer;
 }
 
 .foot_ul {
@@ -405,4 +878,200 @@ footer p {
   font-size: 12px;
   height: 26px;
   line-height: 26px;
+}
+
+#box nav {
+  margin-left: 240px;
+}
+
+#box nav .carousel {
+  position: relative;
+  width: 714px;
+  height: 382px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#box nav .carousel ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#box nav .carousel img {
+  display: block;
+}
+
+#box nav .carousel .next, #box nav .carousel .prev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 10px 5px;
+  width: 30px;
+  height: 50px;
+  line-height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+#box nav .carousel .next {
+  left: auto;
+  right: 0;
+}
+
+#box nav .carousel .page {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+#box nav .carousel .page span {
+  display: inline-block;
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #efefef;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#box nav .carousel .page span.active {
+  background-color: #f60;
+  color: #fff;
+}
+
+#box nav > img {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+#box > span {
+  display: block;
+  z-index: 100;
+  width: 100%;
+  border: 1px solid red;
+}
+
+#box > div .nav1_1 {
+  width: 232px;
+  height: 175px;
+  border: 1px solid #ccc;
+  margin-left: 8px;
+  margin-top: 10px;
+}
+
+#box > div .nav1_1 img {
+  margin-left: 95px;
+  margin-top: 20px;
+}
+
+#box > div .nav1_1 > p {
+  text-align: center;
+}
+
+#box > div .nav1_1 button {
+  border: 0;
+  padding: 0;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 16px;
+}
+
+#box > div .nav1_1 button a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  background: #dc0f50;
+  color: white;
+  font-size: 16px;
+}
+
+#box > div .nav1_1 > a {
+  float: right;
+  margin-right: 16px;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+#box > div .nav1_2 {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 232px;
+  border: 1px solid #ccc;
+  margin-left: 8px;
+  margin-bottom: 14px;
+}
+
+#box > div .nav1_2 h3 {
+  color: #ccc;
+  text-align: center;
+  font-size: 24px;
+  height: 66px;
+  line-height: 66px;
+}
+
+#box > div .nav1_2 h3 i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+#box > div .nav1_2 ul {
+  width: 210px;
+  height: 67px;
+  margin: 0 auto;
+}
+
+#box > div .nav1_2 ul li {
+  float: left;
+  width: 52.5px;
+  height: 55px;
+  color: #333;
+  font-size: 12px;
+  text-align: center;
+}
+
+#box > div .nav1_2 ul li:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#box > div .nav1_2 ul li i {
+  display: block;
+  text-align: center;
+}
+
+#box > div .nav2 {
+  width: 232px;
+  border-top: 2px solid red;
+  margin-left: 8px;
+  text-align: center;
+}
+
+#box > div .nav2 P {
+  margin: 10px 0 20px 0;
+  color: red;
+}
+
+#box > div .nav2 img {
+  width: 113px;
+  display: block;
+  margin: 0 auto;
+}
+
+#box > div .nav2 button {
+  width: 113px;
+  height: 28px;
+  background-color: #dc0f50;
+  font-size: 12px;
+  margin-top: 20px;
+  outline: none;
+  border: 0;
+  color: white;
 }
