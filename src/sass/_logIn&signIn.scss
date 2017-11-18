@@ -119,6 +119,7 @@
             padding:45px 0 0 70px;
             border:1px solid #ccc;
             ul{
+                margin-top:10px;
                 li{
                     margin-bottom: 19px;
                     position:relative;
@@ -151,6 +152,7 @@
                         outline:0;
                         background:#dc0f50;
                         color:white;
+                        cursor:pointer;
                     }
                     i{
                         position:absolute;
@@ -159,6 +161,11 @@
                         color:#ccc;
                         font-size:22px;
                     }
+                }
+            }
+            span{
+                img{
+                    margin:0 4px 0 5px;
                 }
             }
         }

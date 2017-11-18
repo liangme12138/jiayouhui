@@ -8,7 +8,7 @@
 * @Author: Marte
 * @Date:   2017-07-31 10:29:25
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-14 20:27:50
+* @Last Modified time: 2017-11-16 00:37:54
 */
 
 // 禁止选中文字的css样式
@@ -589,7 +589,7 @@ function type(data){
  * [ajax请求]
  * @param  {object} options  [参数]
  *  调用如下：
-    // ajax.requests({
+    // ajax.request({
     //     type:"get",
     //     url:"http://wthrcdn.etouch.cn/weather_mini",
     //     data:{id:1,pageNo:2},

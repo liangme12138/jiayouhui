@@ -92,11 +92,106 @@
                 }
             }
         }
+        .list_m_1_list{
+            li{
+                float:left;
+                width:214px;
+                height:310px;
+                margin-bottom:30px;
+                padding:0 10px;
+                cursor:pointer;
+                &:hover{
+                    h4{
+                        color:red;
+                    }
+                }
+                img{
+                    width:212px;
+                    height:212px;
+                }
+                h4{
+                    font-size:14px;
+                    height:50px;
+                    line-height:25px;
+                    overflow:hidden;
+                    white-space:wrap;
+                    text-overflow:ellipsis;
+                    margin:0 5px;
+                }
+                p{
+                    color:red;
+                    font-size:20px;
+                }
+                del{
+                    float:right;
+                    color:#666;
+                    font-size:14px;
+                }
+                .list_m_1_p{
+                    margin-top:26px;
+                    color:#666;
+                    font-size:14px;
+                }
+            }
+        }
 
     }
     .list_m_2{
         // min-height:1000px;
         width:233px;
+        ul{
+            li{
+                width:136px;
+                height:80px;
+                padding:10px 0;
+                padding-left:97px;
+                position:relative;
+                border-bottom:1px solid #e5e5e5;
+                cursor:pointer;
+                &:hover{
+                    h4{
+                        color:red;
+                    }
+                }
+                img{
+                    position:absolute;
+                    left:0;
+                    top:10px;
+                    width:80px;
+
+                }
+                h4{
+                    color:#333;
+                    height:54px;
+                    overflow:hidden;
+                    font-size:13px;
+                }
+
+                
+                p{
+                    color:red;
+                    font-size:20px;
+                    >span{
+                        position:absolute;
+                        left:0;
+                        top:10px;
+                        display:inline-block;
+                        width:25px;
+                        height:25px;
+                        color:white;
+                        font-size:12px;
+                        padding-left:5px;
+                        background:url("../img/biao_bg.png") no-repeat 0 0;
+                    }
+                    .i2{
+                        background:url("../img/biao_bg.png") no-repeat 0 -26px;
+                    }
+                    .i3{
+                        background:url("../img/biao_bg.png") no-repeat 0 -52px;
+                    }
+                }
+            }
+        }
     }
     .list_m_3{
         width:1200px;
@@ -115,7 +210,78 @@
             }
             &:last-child{
                 height:300px;
+                width:1200px;
+                overflow:hidden;
+                position:relative;
+                ul{
+                    height:300px;
+                    width:3495px;
+                    padding-left:25px;
+                    position:absolute;
+                    li{
+                        float:left;
+                        width:200px;
+                        height:277px;
+                        margin:0 22px 0 11px;
+                        cursor:pointer;
+                        &:hover{
+                            h4{
+                                color:red;
+                            }
+                        }
+                        img{
+                            width:200px;
+                            height:200px;
+                        }
+                        h4{
+                            font-size:14px;
+                            height:50px;
+                            line-height:25px;
+                            overflow:hidden;
+                            white-space:wrap;
+                            text-overflow:ellipsis;
+                            margin:0 5px;
+                        }
+                        p{
+                            color:red;
+                            font-size:20px;
+                        }
+                        del{
+                            float:right;
+                            color:#666;
+                            font-size:14px;
+                        }
+                        .list_m_1_p{
+                            margin-top:26px;
+                            color:#666;
+                            font-size:14px;
+                        }
+                    }
+                }
+                span{
+                    position:absolute;
+                    top:125px;
+                    display:inline-block;
+                    width:30px;
+                    height:50px;
+                    line-height:50px;
+                    text-align:center;
+                    color:white;
+                    background:#58bc58;
+                    opacity:0.3;
+                    &:hover{
+                        opacity:0.5;
+                        cursor:pointer;
+                    }
+                }
+                .list_m_3prev{
+                    left:0;
+                }
+                .list_m_3next{
+                    right:0;
+                }
             }
+
         }
     }
 }

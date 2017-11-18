@@ -4,7 +4,7 @@
 	$servername = 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'jiaoxue';
+	$database = 'jiayouhui';
 
 
 	// 连接数据库

@@ -8,7 +8,7 @@
 * @Author: Marte
 * @Date:   2017-07-31 10:29:25
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-14 20:27:50
+* @Last Modified time: 2017-11-18 00:53:33
 */
 
 // 禁止选中文字的css样式
@@ -491,13 +491,17 @@ var Cookie = {
 
         return  res;
     },
-    remove:function(name){
+    remove:function(name,path){
         // 利用设置过期时间达到删除的效果。
         var now = new Date();
-        now.setDate(now.getDate()-100);
+        now.setDate(now.getDate()-200);
 
         // document.cookie = name +'=xxx;expires=' + now.toUTCString();
-        Cookie.set(name,null,now);
+        if(path){
+            Cookie.set(name,null,now,path);
+        }else{
+            Cookie.set(name,null,now);
+        }
     }
 }
 
@@ -589,7 +593,7 @@ function type(data){
  * [ajax请求]
  * @param  {object} options  [参数]
  *  调用如下：
-    // ajax.requests({
+    // ajax.request({
     //     type:"get",
     //     url:"http://wthrcdn.etouch.cn/weather_mini",
     //     data:{id:1,pageNo:2},
@@ -1085,12 +1089,17 @@ function popup(ele){
 }
 
 // [jq懒加载get请求]
+// 调用：
+        // $("body").lazyLoad({
+        //     url:"../api/fenye.php"
+        // });
 ;(function($){
     $.fn.lazyLoad = function(options){
         var defaults = {
-            qty:10,
+            qty:15,
             pageNo:1,
-            url:"",
+            sales:1,
+            // url:"",
             type:"get"
         };
         var $self = this;
@@ -1098,41 +1107,80 @@ function popup(ele){
         var opt = $.extend({},defaults,options);
         var load = {
             _init(){
-                this.ul = document.createElement("ul");;
-                this.body = document.querySelector("body");
-                this.last = opt.pageNo;
-                this.send();
+                // this.ul = document.createElement("ul");
+                this.ul = document.querySelector(".list_m_1_list");
+                this.ul1 = document.querySelector(".list_m_2 ul");
+                this.ul2 = document.querySelector(".list_m_3_div");
+                this.last = 1;
                 // 滚动事件
-                $(window).on("scroll",function(){
-                    if($(window).scrollTop() >= $("html").outerHeight() - $(window).height()-40 && opt.pageNo != this.last){
+                $(window).off().on("scroll",function(){
+                    if($(window).scrollTop() >= $("html").outerHeight() - $(window).height()-600 && opt.pageNo != this.last){
                         this.send();
+                        this.last = opt.pageNo;
                     }
                 }.bind(this));
-                
+                return this;
             },
             send(){
                 $.get(opt.url,{
                     pageNo:opt.pageNo,
-                    qty:opt.qty
+                    qty:opt.qty,
+                    val1:opt.val1,
+                    val2:opt.val2,
+                    state:opt.state,
+                    status:opt.status
                 },function(data){
                     var res = JSON.parse(data);
                     // 数据写入
-                    
-                    this.ul.innerHTML += res.data.map(item=>{
-                        return `<li>
-                            <h4>${item.name}</h4>
-                            <p>${item.content}</p>
-                        </li>`
-                    }).join('');
-                    this.body.appendChild(this.ul);
-                    this.last = opt.pageNo;
-                    if(opt.pageNo < Math.ceil(res.total/opt.pageNo)){
-                        opt.pageNo++;
+                    if(res != false){
+                        this.ul.innerHTML += res.data.map(item=>{
+                            return `<li data-guid="${item.id}">
+                                <img src="../img/${item.imgurl}"/>
+                                <h4>${item.goodsName}</h4>
+                                <p class="fl">￥ ${item.price}<p/>
+                                <del>￥ ${item.oldPrice}<del/>
+                                <p class="list_m_1_p">月销 ${item.sales} 件</p>
+                            </li>`
+                        }).join('');
+                        
+                        if(opt.pageNo == 1){
+                            this.ul1.innerHTML += res.data.map((item,idx)=>{
+                                if(idx < 3){
+                                    return `<li data-guid="${item.id}">
+                                        <img src="../img/${item.imgurl}"/>
+                                        <h4>${item.goodsName}</h4>
+                                        <p>￥ ${item.price}<p/>
+                                        <span class="i${idx+1}">${idx+1}<span/>
+                                    </li>`
+                                }else{
+                                    return `<li data-guid="${item.id}">
+                                        <i><i/>
+                                        <img src="../img/${item.imgurl}"/>
+                                        <h4>${item.goodsName}</h4>
+                                        <p class="fl">￥ ${item.price}<p/>
+                                    </li>`
+                                }
+                            }).join('');
+                            this.ul2.innerHTML += res.data.map((item,idx)=>{
+                                return `<li data-guid="${item.id}">
+                                    <img src="../img/${item.imgurl}"/>
+                                    <h4>${item.goodsName}</h4>
+                                    <p class="fl">￥ ${item.price}<p/>
+                                    <del>￥ ${item.oldPrice}<del/>
+                                    
+                                </li>`
+                            }).join('');
+                        }
+                        if(opt.pageNo < Math.ceil(res.total/opt.qty)){
+                            opt.pageNo++;
+                        }
+
                     }
                 }.bind(this));
+                return this;
             }
         }
-        load._init();
+        load._init().send();
     }
 })(jQuery);
 
