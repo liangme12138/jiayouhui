@@ -345,6 +345,10 @@ a {
   margin: 15px auto;
 }
 
+.list_m del {
+  margin-right: 10px;
+}
+
 .list_m .list_m_1 {
   width: 957px;
 }
@@ -461,7 +465,7 @@ a {
   cursor: pointer;
 }
 
-.list_m .list_m_1 .list_m_1_list li:hover h4 {
+.list_m .list_m_1 .list_m_1_list li:hover p:nth-of-type(1) {
   color: red;
 }
 
@@ -470,10 +474,11 @@ a {
   height: 212px;
 }
 
-.list_m .list_m_1 .list_m_1_list li h4 {
+.list_m .list_m_1 .list_m_1_list li p:nth-of-type(1) {
   font-size: 14px;
   height: 50px;
   line-height: 25px;
+  color: #666;
   overflow: hidden;
   white-space: wrap;
   text-overflow: ellipsis;
@@ -511,7 +516,7 @@ a {
   cursor: pointer;
 }
 
-.list_m .list_m_2 ul li:hover h4 {
+.list_m .list_m_2 ul li:hover p:nth-of-type(1) {
   color: red;
 }
 
@@ -522,7 +527,7 @@ a {
   width: 80px;
 }
 
-.list_m .list_m_2 ul li h4 {
+.list_m .list_m_2 ul li p:nth-of-type(1) {
   color: #333;
   height: 54px;
   overflow: hidden;
@@ -595,7 +600,7 @@ a {
   cursor: pointer;
 }
 
-.list_m .list_m_3 div:last-child ul li:hover h4 {
+.list_m .list_m_3 div:last-child ul li:hover p:nth-of-type(1) {
   color: red;
 }
 
@@ -604,10 +609,11 @@ a {
   height: 200px;
 }
 
-.list_m .list_m_3 div:last-child ul li h4 {
+.list_m .list_m_3 div:last-child ul li p:nth-of-type(1) {
   font-size: 14px;
   height: 50px;
   line-height: 25px;
+  color: #666;
   overflow: hidden;
   white-space: wrap;
   text-overflow: ellipsis;
@@ -675,6 +681,15 @@ a {
 .list_d .list_d_1 .list_d_1_img {
   width: 545px;
   height: 512px;
+}
+
+.list_d .list_d_1 .list_d_1_img div {
+  height: 460px;
+}
+
+.list_d .list_d_1 .list_d_1_img ul {
+  width: 64px;
+  height: 460px;
 }
 
 .list_d .list_d_1 .list_d_1_cont {

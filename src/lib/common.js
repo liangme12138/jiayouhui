@@ -8,7 +8,7 @@
 * @Author: Marte
 * @Date:   2017-07-31 10:29:25
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-18 00:53:33
+* @Last Modified time: 2017-11-18 09:35:26
 */
 
 // 禁止选中文字的css样式
@@ -1136,7 +1136,7 @@ function popup(ele){
                         this.ul.innerHTML += res.data.map(item=>{
                             return `<li data-guid="${item.id}">
                                 <img src="../img/${item.imgurl}"/>
-                                <h4>${item.goodsName}</h4>
+                                <p>${item.goodsName}</p>
                                 <p class="fl">￥ ${item.price}<p/>
                                 <del>￥ ${item.oldPrice}<del/>
                                 <p class="list_m_1_p">月销 ${item.sales} 件</p>
@@ -1148,7 +1148,7 @@ function popup(ele){
                                 if(idx < 3){
                                     return `<li data-guid="${item.id}">
                                         <img src="../img/${item.imgurl}"/>
-                                        <h4>${item.goodsName}</h4>
+                                        <p>${item.goodsName}</p>
                                         <p>￥ ${item.price}<p/>
                                         <span class="i${idx+1}">${idx+1}<span/>
                                     </li>`
@@ -1156,7 +1156,7 @@ function popup(ele){
                                     return `<li data-guid="${item.id}">
                                         <i><i/>
                                         <img src="../img/${item.imgurl}"/>
-                                        <h4>${item.goodsName}</h4>
+                                        <p>${item.goodsName}</p>
                                         <p class="fl">￥ ${item.price}<p/>
                                     </li>`
                                 }
@@ -1164,7 +1164,7 @@ function popup(ele){
                             this.ul2.innerHTML += res.data.map((item,idx)=>{
                                 return `<li data-guid="${item.id}">
                                     <img src="../img/${item.imgurl}"/>
-                                    <h4>${item.goodsName}</h4>
+                                    <p>${item.goodsName}</p>
                                     <p class="fl">￥ ${item.price}<p/>
                                     <del>￥ ${item.oldPrice}<del/>
                                     
