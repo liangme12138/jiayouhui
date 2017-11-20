@@ -8,7 +8,7 @@
 * @Author: Marte
 * @Date:   2017-07-31 10:29:25
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-18 09:35:26
+* @Last Modified time: 2017-11-19 22:06:33
 */
 
 // 禁止选中文字的css样式
@@ -731,7 +731,256 @@ var ajax = {
  //     .page span{display:inline-block;margin:0 5px;width:30px;height:30px;line-height:30px;text-align:center;background-color:#efefef;border-radius:50%;cursor:pointer;}
  //     .page span.active{background-color:#f60;color:#fff;}
  // </style>
+ // 多个轮播图公用
+ ;(function($){
+     $.fn.lmLbt = function(options){
+         //默认值
+         // 默认参数
+         var defaults = {
+             width:810,
+             height:320,
+             imgs:[],
+             type:"horizontal",//horizontal、fade
+             // 图片切换间隔时间
+             duration:1500,
+             ele:".carousel",
+             // 是否自动轮播
+             autoPlay:true,
+             // 默认index
+             index:0,
+             // 是否显示前后按钮
+             button:true,
+             // 是否显示页码
+             page:true,
+             // 是否无缝滚动
+             marquee:true
+         }
+         // 覆盖默认参数
+         // var opt = Object.assign({},defaults,options);//es6
+         //this:jquery对象（实例）
+         this.each(function(){
+             //this：节点
+             var $this = $(this);
 
+             // 扩展默认值
+             var opt = $.extend({},defaults,options);
+
+             var zoom = {
+                _init:function(){
+                    this.ele = document.querySelector(opt.ele);
+                    this.ele.classList.add("carousel");
+                    var lastIndex = 0;
+                    this.opt = opt;
+                    var ul = document.createElement("ul");
+                    ul.style.height = opt.height + "px";
+                    
+                    ul.innerHTML = opt.imgs.map(function(item){
+                            return `<li><img src="${item}"/></li>`;
+                        }).join("");
+                    this.ele.appendChild(ul);
+                    
+                    // 判断是否无缝
+                    if(opt.marquee){
+                        // 复制第一张图片并写到ul最后
+                        var copyLi = ul.children[0].cloneNode(true);
+                        ul.appendChild(copyLi);
+                    }
+                    var li = ul.children;
+                    // 是否显示前后按钮
+                    var prev = document.createElement("span");
+                    var next = document.createElement("span");
+                    if(opt.button){
+                        prev.className = "prev";
+                        prev.innerHTML = "&lt;";
+                        prev.style.fontSize = "30px";
+                        next.className = "next";
+                        next.innerHTML = "&gt;";
+                        next.style.fontSize = "30px";
+                        this.ele.appendChild(prev);
+                        this.ele.appendChild(next);
+                    }
+                    var page1;
+                    // 是否显示页码
+                    if(opt.page){
+                        page1 = document.createElement("div");
+                        page1.className = "page";
+                        this.ele.appendChild(page1);
+                        for(var i=0;i<opt.imgs.length;i++){
+                            var span = document.createElement("span");
+                            span.innerHTML = i+1;
+                            if(i === this.opt.index){
+                                span.className = "active";
+                            }
+                            page1.appendChild(span);
+                        }
+                        this.ele.appendChild(page1);
+                    }
+                    // var span1 = document.querySelectorAll(".page span");
+                    var span1 = $this.find(".page span");
+                    console.log(span1)
+                    this.span = span1;
+                    // 判断是否自动轮播
+                    if(opt.autoPlay){
+                        this.start();
+                    }
+                    // 判断滚动的方向
+                    if(opt.type === "horizontal"){
+                        // 改变ul的宽度
+                        ul.style.width = opt.width*ul.children.length + "px";
+                        ul.style.left = opt.width*(-opt.index) + "px";
+                        // 将li设为float:left;
+                        for(var i=0;i<li.length;i++){
+                            li[i].style.float = "left";
+                        }
+                    }else if(opt.type === "vertical"){
+                        ul.style.top = -opt.index*opt.height + "px";
+                    }else if(opt.type === "fade"){
+                        // 将li定位
+                        for(var i=0;i<li.length;i++){
+                            li[i].style.position = "absolute";
+                            li[i].style.left = 0;
+                            li[i].style.top = 0;
+                            li[i].style.opacity = 0;
+                        }
+                        li[opt.index].style.opacity = 1;
+                    }
+                    // 移入
+                    this.ele.onmouseenter = function(){
+                        this.stop();
+                    }.bind(this);
+                    // 移出
+                    this.ele.onmouseleave = function(){
+                        this.start();
+                    }.bind(this);
+                    // 上一张图片
+                    prev.onclick = function(){
+                        this.prev();
+                    }.bind(this);
+                    // 下一张图片
+                    next.onclick = function(){
+                        this.next();
+                    }.bind(this);
+                    // 点击页码跳转
+                    page1.onclick = function(e){
+
+                        e = e || window.event;
+                        var target = e.target || e.srcElement;
+                        if(target.tagName.toLowerCase() === "span"){
+                            for(var i=0;i<this.span.length;i++){
+                                console.log(this.span.length)
+                                if(this.span[i] === target){
+                                    this.opt.index = i;
+                                    this.move();
+                                }else{
+                                    this.span[i].className = "";
+                                }
+                            }
+                        }
+                    }.bind(this);
+                    this.ul = ul;
+                    this.li = li;
+                    
+                    this.len = opt.imgs.length;
+                    this.lastIndex = lastIndex;
+                },
+                move:function(){
+                    // 判断是否无缝滚动
+                    if(this.opt.marquee){
+                        if(this.opt.index > this.len){
+                            if(this.opt.type === 'vertical' || this.opt.type === 'horizontal'){
+                                this.opt.index = 1;
+                                this.ul.style.top = 0;
+                                this.ul.style.left = 0;
+                            }else if(this.opt.type === 'fade'){
+                                this.opt.index = 1;
+                            }
+                        }else if(this.opt.index < 0){
+                            this.opt.index = this.len;
+                            if(this.opt.type === 'vertical'){
+                                this.ul.style.top = -this.opt.index*this.opt.height + "px";
+                            }else if(this.opt.type === 'horizontal'){
+                                this.ul.style.left = -this.opt.index*this.opt.width + "px";
+                            }else if(this.opt.type === 'fade'){
+                                this.opt.index = this.len;
+                                animate(this.li[this.opt.index],{opacity:1});
+                                animate(this.li[this.lastIndex],{opacity:0});
+                                this.lastIndex = this.opt.index;
+                            }
+                            this.opt.index--;
+                            // this.ul.style.left = 0;
+                        }
+                        let target = {};
+                        if(this.opt.type === 'vertical'){
+                            target.top = -this.opt.index*this.opt.height;
+                            animate(this.ul,target);
+                        }else if(this.opt.type === 'horizontal'){
+                            target.left = -this.opt.index*this.opt.width;
+                            animate(this.ul,target);
+                        }else if(this.opt.type === 'fade'){
+                            console.log(this.lastIndex,this.opt.index)
+                            animate(this.li[this.opt.index],{opacity:1});
+                            animate(this.li[this.lastIndex],{opacity:0});
+                            this.lastIndex = this.opt.index;
+                        }
+                    }else{
+                        if(this.opt.index>=this.len){
+                            this.opt.index = 0;
+                        }else if(this.opt.index < 0){
+                            this.opt.index = this.len-1;
+                        }
+                        let target = {};
+                        if(this.opt.type === 'vertical'){
+                            target.top = -this.opt.index*this.opt.height;
+                        }else if(this.opt.type === 'horizontal'){
+                            target.left = -this.opt.index*this.opt.width;
+                        }else if(this.opt.type === 'fade'){
+                            target.opacity = 1;
+                            animate(this.li[this.opt.index],target);
+                            animate(this.li[this.lastIndex],{opacity:0});
+                            this.lastIndex = this.opt.index;
+                        }
+                        animate(this.ul,target);
+                    }
+                    
+                    for(var i=0;i<this.span.length;i++){
+                        if(this.opt.index === i){
+                            this.span[i].className = "active";
+                        }else{
+                            this.span[i].className = "";
+                        }
+                        if(this.opt.index === this.span.length){
+                            this.span[0].className = "active";
+                        }
+                    }
+                    return this;
+                },
+                start:function(){
+                    this.timer = setInterval(()=>{
+                        
+                        this.opt.index++;
+                        this.move();
+                    },this.opt.duration);
+                    return this;
+                },
+                stop:function(){
+                   clearInterval(this.timer);
+                },
+                prev:function(){
+                    this.opt.index--;
+                    this.move();
+                },
+                next:function(){
+                    this.opt.index++;
+                    this.move();
+                }
+
+             }
+             zoom._init();
+         });
+     }
+ })(jQuery);
+
+ // 不能用于多个轮播图
 // 以div为对象
 function Carousel(options){
     // 默认参数
@@ -764,6 +1013,7 @@ function Carousel(options){
 }
 Carousel.prototype = {
     // constructor:Carousel,
+
     init(opt){
         this.ele = document.querySelector(opt.ele);
         this.ele.classList.add("carousel");
@@ -1186,10 +1436,15 @@ function popup(ele){
 
 // [放大镜]
 // 样式
+// 小图图片
 // .bigPic img{width:300px;}
+// 小图div定位
 // .gds-zoom{position:relative;}
+// 小遮罩
 // .gds-zoom .minzoom{position: absolute;width:30px;height:30px;border:1px solid #fc0;background-color:#ff0;background-color: rgba(255,255,0,.3);filter:alpha(Opacity=30);}
+// 大图div
 // .gds-big{position: absolute;width:200px;height:300px;overflow:hidden;}
+// 大图图片
 // .gds-big img{position: absolute;left:0;right:0;}
 // 调用如下
 // $('.bigPic').gdsZoom({height:500,width:500,position:"right"});
@@ -1236,9 +1491,9 @@ function popup(ele){
                     // 定位大图显示区域
                     if(opt.position === "right"){
                         this.$big.css({
-                            left:this.$smallImg.offset().left + this.$smallImg.outerWidth(),
-                            top:this.$smallImg.offset().top,
-                            marginLeft:opt.gap
+                            'left':this.$smallImg.offset().left + this.$smallImg.outerWidth(),
+                            'top':this.$smallImg.offset().top,
+                            'marginLeft':opt.gap
                         });
                     }else if(opt.position === "top"){
                         this.$big.css({
@@ -1277,7 +1532,7 @@ function popup(ele){
                     // 写入图片地址
                     this.$bigImg.attr('src',this.$smallImg.attr('data-big'));
                     this.$big.append(this.$bigImg);
-                    this.$big.appendTo('body');
+                    this.$big.appendTo($(".list_d_1_img"));
                     this.$minzoom.appendTo($small);
 
                     console.log(this.$bigImg[0].complete)
@@ -1304,7 +1559,7 @@ function popup(ele){
                 move:function(x,y){
                     // 计算放大镜移动过的距离
                     var left = x - $small.offset().left -  this.$minzoom.outerWidth()/2;
-                    var top = y - $small.offset().top -  this.$minzoom.outerHeight()/2;
+                    var top = y - $small.offset().top -  this.$minzoom.outerHeight()/2 + $(window).scrollTop();
 
                     // 限定left,top值
                     if(left<0){
@@ -1335,4 +1590,7 @@ function popup(ele){
         });
     }
 })(jQuery);
+
+
+
 

@@ -12,4 +12,213 @@
             }
         }
     }
+    .contents{
+        width:960px;
+        margin:0 auto;
+        .contents_top{
+            border-bottom:2px solid red;
+            height:55px;
+            margin-top:15px;
+            padding:0 5px;
+            h3{
+                margin-top:30px;
+            }
+            p{
+                color:#CA0808;
+                margin-left:10px;
+                font-size:12px;
+                margin-top:33px;
+            }
+            &>a{
+                width:124px;
+                height:35px;
+                line-height:35px;
+                background:#CC0210;
+                color:white;
+                text-align:center;
+                border-radius:5px;
+                margin-top:10px;
+            }
+        }
+        .contents_goods{
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            &>p{
+                padding-left:16px;
+                font-size:12px;
+                color:#989898;
+                border-top:1px solid #ccc;
+                border-bottom:1px solid #EAEAEA;
+                height:38px;
+                line-height:38px;
+                background:#EAEAEA;
+            }
+            .contents_goods_food{
+                height:51px;
+                line-height:51px;
+                padding-left:15px;
+                span{
+                   input{
+                        outline:0;
+                   } 
+                }
+                &>a{
+                    margin-left:30px;
+                    font-size:12px;
+                }
+                div{
+                    margin-right:20px;
+                    font-size:13px;
+                    span{
+                        color:#CA0809;
+                        font-size:25px;
+                        line-height:49px;
+                        font-weight:bold;
+                        vertical-align:top;
+                        input{
+                            outline:0;
+                        }
+                    }
+                }
+            }
+
+            .contents_goods_ul{
+                min-height:10px;
+                margin-left:15px;
+                &>li{
+                    text-align:center;
+                    width:928px;
+                    &>ul{
+                        &>li{
+                            float:left;
+                            height:70px;
+                            line-height:70px;
+                            font-size:12px;
+                            input{
+                                outline:0;
+                            }
+                            &:nth-child(1){
+                                width:49px;
+                            }
+                            &:nth-child(2){
+                                a{
+                                    display:inline-block;
+                                    font-size:12px;
+                                    color:#000;
+                                    line-height:20px;
+                                    width:320px;
+                                    text-align:left;
+                                    margin-top:10px;
+                                    vertical-align:top;
+                                    &:hover{
+                                        color:red;
+                                    }
+                                }
+                                img{
+                                    width:50px;
+                                    height:50px;
+                                    margin-top:10px;
+
+                                }
+                            }
+                            &:nth-child(3){
+                                width:81px;
+                            }
+                            &:nth-child(4){
+                                width:68px;
+                                text-align:right;
+                                padding-right:20px;
+                            }
+                            &:nth-child(5){
+                                width:154px;
+                                input{
+                                    width:35px;
+                                    height:18px;
+                                    text-align:center;
+                                }
+                                span{
+                                    display:inline-block;
+                                    cursor:pointer;
+                                    width:15px;
+                                    height:18px;
+                                    line-height:18px;
+                                    border:1px solid #ccc;
+                                }
+                            }
+                            &:nth-child(6){
+                                width:72px;
+                            }
+                            &:nth-child(7){
+                                width:78px;
+                                text-align:right;
+                                float:right;
+                                a{
+                                    padding:5px;
+                                    border:1px solid #ccc;
+                                    &:hover{
+                                        color:red;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+            .contents_goods_top{
+                height:31px;
+                line-height:31px;
+                font-size:12px;
+                color:#999999;
+                border-bottom:1px solid #ccc;
+                span{
+                    float:left;
+                    &:first-child{
+                        width:113px;
+                        margin-left:15px;
+                        input{
+                            vertical-align:middle;
+                            margin-right:3px;
+                            outline:0;
+                        }
+                    }
+                    &:nth-child(2){
+                        width:315px;
+                    }
+                    &.contents_goods_top_sp{
+                        width:103px;
+                        text-align:center;
+                    }
+                }
+            }
+        }
+        .contents_goods_food_2{
+            height:80px;
+            &>span{
+                margin-top:30px;
+                font-size:13px;
+            }
+            a{
+                width:124px;
+                height:35px;
+                line-height:35px;
+                border:1px solid #ccc;
+                text-align:center;
+                margin-top:20px;
+                margin-right:35px;
+                &.contents_goods_food_2_a{
+                    color:white;
+                    background:#CC0210;
+                    margin-right:0;
+
+                }
+                i{
+                    margin-right:10px;
+                    font-size:20px;
+                }
+            }
+        }
+    }
 }

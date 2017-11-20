@@ -14,17 +14,213 @@
         .list_d_1_img{
             width:545px;
             height:512px;
-            div{
+            .bigPic{
                 height:460px;
+                position:relative;
+                .minzoom{
+                    position: absolute;
+                    width:30px;
+                    height:30px;
+                    border:1px solid #fc0;
+                    background-color:#ff0;
+                    background-color: rgba(255,255,0,.3);
+                    filter:alpha(Opacity=30);
+                }
+                
+            }
+            .gds-big{
+                position: absolute;
+                width:200px;
+                height:300px;
+                overflow:hidden;
+                z-index:100;
+                img{
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    width:1380px;
+                }
             }
             ul{
                 width:64px;
-                height:460px;
+                padding-top:30px;
+                li{
+                    margin-bottom:30px;
+                    img{
+                        width:62px;
+                        height:62px;
+                        &:hover{
+                            border:1px solid red;
+                            box-sizing:border-box;
+                        }
+                        &.active{
+                            border:1px solid red;
+                            box-sizing:border-box;
+                        }
+                    }
+                }
             }
         }
         .list_d_1_cont{
             width:550px;
             height:404px;
+            position:relative;
+            h3{
+                width:550px;
+                height:69px;
+                line-height:30px;
+                padding:7px 0;
+                font-size:20px;
+                color:#333;
+                border-bottom:1px solid #d6d6d6;
+            }
+            >span{
+                position:absolute;
+                left:-300px;
+                bottom:-80px;
+            }
+            div{
+                width:550px;
+                height:340px;
+                padding:5px 0;
+                .price{
+                    b{
+                        color:red;
+                        font-size:30px;
+                    }
+                    span{
+                        border:1px solid #ef8e8f;
+                        color:#ef8e8f;
+                        background:#fcebeb;
+                        padding:1px 3px;
+                        font-size:12px;
+                    }
+                    del{
+                        display:block;
+                        color:#666;
+                    }
+                    a{
+                        float:right;
+                        margin-top:20px;
+                        color:red;
+                        i{
+                            color:red;
+                            font-size:26px;
+                            vertical-align:middle;
+                            margin-left:5px;
+                        }
+                    }
+                }
+                .data-id{
+                    display:block;
+                    height:50px;
+                    line-height:50px;
+                    font-size:14px;
+                    color:#666;
+                }
+                .shou{
+                    display:block;
+                    height:50px;
+                    line-height:50px;
+                    font-size:14px;
+                    color:#666;
+                }
+                .number{
+                    height:40px;
+                    b{
+                        float:left;
+                        color:#666;
+                    }
+                    span{
+                        border:1px solid #ccc;
+                        padding:2px 4px;
+                        cursor:pointer;
+                        float:left;
+                        background:#ccc;
+                    }
+                    input{
+                        width:44px;
+                        height:20px;
+                        padding:0 5px;
+                        text-align:center;
+                        float:left;
+                    }
+                }
+                .bao{
+                    img{
+                        width:20px;
+                        vertical-align:top;
+                    }
+                    span{
+                        font-size:14px;
+                        margin-right:20px;
+                        // margin-left:5px;
+                    }
+                }
+                .bai{
+                    margin-top:20px;
+                    span{
+                        display:inline-block;
+                        width:160px;
+                        height:38px;
+                        line-height:38px;
+                        text-align:center;
+                        color:white;
+                        cursor:pointer;
+                        &:first-child{
+                            background:#fc0;
+                        }
+                        &:last-child{
+                            background:#dc0f50;
+                        }
+                    }
+                }
+                .total{
+                    height:30px;
+                    span{
+                        color:red;
+
+                    }
+                }
+            }
+        }
+    }
+    .introduce{
+        margin-top:20px;
+        .head_1{
+            background:white;
+            height:53px;
+            >div{
+                background:#ccc;
+                float:left;
+                width:161px;
+                height:53px;
+                line-height:53px;
+                text-align:center;
+                border:1px solid #ccc;
+                border-bottom:0;
+                &.head_1_active{
+                    background:white;
+                    border-top:2px solid red;
+                    color:red;
+                }
+            }
+        }
+        .count{
+            border:1px solid #ccc;
+            min-height:600px;
+            padding:50px 50px;
+            img{
+                width:100%;
+                height:586px;
+            }
+            .count_1{
+                display:none;
+                p{
+                    height:50px;
+                    line-height:50px;
+                }
+            }
         }
     }
 }

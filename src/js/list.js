@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-11-14 10:58:23
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-18 09:38:08
+* @Last Modified time: 2017-11-20 08:57:23
 */
 
 require(['config'],function(){
@@ -130,7 +130,7 @@ require(['config'],function(){
                 animate(list_m_3_div,{left:target});
             });
             // 点击跳转到详情页|
-            $(".list_m").on('click',"img",function(){
+            $(".list_m1").on('click',"img",function(){
                 var val = $(this).closest("li").attr("data-guid");
                 location.href = "../html/datalist.html?id=" + val;
             })
